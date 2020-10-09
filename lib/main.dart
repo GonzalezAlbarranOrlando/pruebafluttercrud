@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:provider/provider.dart';
 import 'authentication_service.dart';
 import 'list_page.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,6 +42,7 @@ class AuthenticationWrapper extends StatelessWidget {
     final firebaseuser = context.watch<User>();
 
     if (firebaseuser != null) {
+      Fluttertoast.showToast(msg: "Bienvenido");
       return ListPage();
     }
     return Login_page();

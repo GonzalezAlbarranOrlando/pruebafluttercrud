@@ -28,6 +28,9 @@ class ListPage extends StatelessWidget {
                     return ListTile(
                       title: Text(data['nombre']),
                       subtitle: Text(String.fromCharCode(36) + data['precio'].toString()),
+                      onTap: (){
+                        Fluttertoast.showToast(msg: " " + data.toString());
+                      },
                     );
                   }
               );
